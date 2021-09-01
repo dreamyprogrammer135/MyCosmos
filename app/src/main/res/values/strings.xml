@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">My cosmos</string>
+    <string name="Home">Home</string>
+    <string name="picture_today">Today</string>
 </resources>

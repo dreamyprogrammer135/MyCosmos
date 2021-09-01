@@ -1,17 +1,24 @@
 package com.dreamyprogrammer.mycosmos
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.dreamyprogrammer.mycosmos.ui.main.MainFragment
+import androidx.appcompat.app.AppCompatActivity
+import com.dreamyprogrammer.mycosmos.databinding.MainActivityBinding
+import com.dreamyprogrammer.mycosmos.ui.main.PictureOfTheDayFragment
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: MainActivityBinding
+
+    private val pictureOfTheDay by lazy { PictureOfTheDayFragment }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.main_activity)
+        binding = MainActivityBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container, MainFragment.newInstance())
+                .replace(R.id.container, PictureOfTheDayFragment.newInstance())
                 .commitNow()
         }
     }
