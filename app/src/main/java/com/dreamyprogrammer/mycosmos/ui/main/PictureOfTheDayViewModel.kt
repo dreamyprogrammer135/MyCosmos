@@ -15,8 +15,8 @@ class PictureOfTheDayViewModel : ViewModel() {
     val pictureOfTheDay: LiveData<PictureOfTheDayDate> = _pictureOfTheDay
     private val service by lazy { RetrofitHolder.getNasaApiService() }
 
-    fun getPicture() {
-        val apiKey: String = BuildConfig.ApiKey
+    fun reloadPicture() {
+        val apiKey: String = BuildConfig.API_KEY
 
         service.getPictureOfTheDay(apiKey)
             .enqueue(object : Callback<PictureOfTheDayDate> {

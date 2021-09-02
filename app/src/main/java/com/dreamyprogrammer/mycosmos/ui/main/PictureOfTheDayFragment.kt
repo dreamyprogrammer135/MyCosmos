@@ -33,7 +33,7 @@ class PictureOfTheDayFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.getPicture()
+        viewModel.reloadPicture()
         binding.apply {
             viewModel.pictureOfTheDay.observe(viewLifecycleOwner) { picture ->
                 textViewPictureOfTheDay.text = picture.explanation
@@ -48,7 +48,7 @@ class PictureOfTheDayFragment : Fragment() {
             }
 
             chipGroupPictureOfTheDay.setOnCheckedChangeListener { _, _ ->
-                viewModel.getPicture()
+                viewModel.reloadPicture()
             }
 
             val bottomSheetBehavior: BottomSheetBehavior<FrameLayout> =

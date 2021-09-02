@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Мой космос</string>
-    <string name="Home">Фото дня</string>
+    <string name="home">Фото дня</string>
     <string name="picture_today">Сегодня</string>
 </resources>
