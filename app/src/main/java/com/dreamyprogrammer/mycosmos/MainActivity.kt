@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
     private fun receivePreference(): Boolean {
         val preferenceManager =
             androidx.preference.PreferenceManager.getDefaultSharedPreferences(application)
-        return preferenceManager.getBoolean("select_theme", true)
+        return preferenceManager.getBoolean("select_theme", false)
     }
 
     private fun prepareBottomNavigationView() {
