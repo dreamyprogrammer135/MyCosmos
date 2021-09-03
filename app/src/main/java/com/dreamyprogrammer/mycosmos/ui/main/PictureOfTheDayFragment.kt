@@ -23,6 +23,7 @@ class PictureOfTheDayFragment : Fragment() {
         fun newInstance() = PictureOfTheDayFragment()
     }
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

@@ -2,4 +2,9 @@
     <string name="app_name">My cosmos</string>
     <string name="home">Home</string>
     <string name="picture_today">Today</string>
+    <string name="theme">Theme</string>
+    <string name="settings">settings</string>
+    <string name="mars_them">Mars them</string>
+    <string name="choose_standard_theme">Choose a standard theme</string>
+    <string name="choose_martian_theme">Choose a martian theme</string>
 </resources>

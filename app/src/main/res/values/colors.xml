@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="cosmos_background">#221F1F</color>
     <color name="cosmos_gray">#616060</color>
+    <color name="mars_colorPrimary">#CD7154</color>
+    <color name="mars_colorPrimaryVariant">#F34008</color>
 </resources>

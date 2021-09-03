@@ -4,4 +4,8 @@
         android:id="@+id/menu_bottom_item_picture"
         android:icon="@drawable/ic_home"
         android:title="@string/home" />
+    <item
+        android:id="@+id/app_bar_settings"
+        android:icon="@drawable/ic_settings_24"
+        android:title="@string/settings" />
 </menu>
