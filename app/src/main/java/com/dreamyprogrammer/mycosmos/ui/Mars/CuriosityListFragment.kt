@@ -38,10 +38,10 @@ class CuriosityListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.curiosity.observe(viewLifecycleOwner) { photos ->
-            binding.viewPagerCuriosity.adapter =
-                CuriosityPhotoListViewPagerAdapter(requireActivity(), photos)
-             numOfCuriosityPhotos.value = photos.size
+//        viewModel.curiosity.observe(viewLifecycleOwner) { photos ->
+//            binding.viewPagerCuriosity.adapter =
+//                CuriosityPhotoListViewPagerAdapter(requireActivity(), photos)
+//             numOfCuriosityPhotos.value = photos.size
         }
     }
 
