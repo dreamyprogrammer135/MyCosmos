@@ -1,4 +1,4 @@
-package com.dreamyprogrammer.mycosmos.ui.main
+package com.dreamyprogrammer.mycosmos.ui.PictureOfTheDay
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

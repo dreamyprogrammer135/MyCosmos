@@ -4,7 +4,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import com.dreamyprogrammer.mycosmos.databinding.MainActivityBinding
-import com.dreamyprogrammer.mycosmos.ui.main.PictureOfTheDayFragment
+import com.dreamyprogrammer.mycosmos.ui.Mars.CuriousityFragment
+import com.dreamyprogrammer.mycosmos.ui.PictureOfTheDay.PictureOfTheDayFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     private val bottomView: BottomNavigationView by lazy { binding.bottomNavigationView }
     private val pictureOfTheDayFragment by lazy { PictureOfTheDayFragment() }
+    private val marsFragment by lazy { CuriousityFragment() }
     private val fragmentSettings by lazy { SettingsFragment() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,6 +67,9 @@ class MainActivity : AppCompatActivity() {
                         setMyThem(receivePreference())
                     }
                 }
+                R.id.menu_bottom_item_mars -> {
+                    showMars()
+                }
                 R.id.app_bar_settings -> {
                     showSettings()
                 }
@@ -84,6 +89,15 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.container, pictureOfTheDayFragment)
             .commit()
     }
+
+    private fun showMars() {
+        supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.container, marsFragment)
+            .commit()
+    }
+
 
     private fun showSettings() {
         supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)

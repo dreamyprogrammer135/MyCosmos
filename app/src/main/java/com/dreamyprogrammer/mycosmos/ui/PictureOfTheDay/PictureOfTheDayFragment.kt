@@ -1,4 +1,4 @@
-package com.dreamyprogrammer.mycosmos.ui.main
+package com.dreamyprogrammer.mycosmos.ui.PictureOfTheDay
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -64,6 +64,11 @@ class PictureOfTheDayFragment : Fragment() {
 
             }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
 
