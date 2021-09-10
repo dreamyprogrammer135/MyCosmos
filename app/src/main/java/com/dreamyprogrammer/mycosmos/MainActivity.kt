@@ -3,11 +3,14 @@ package com.dreamyprogrammer.mycosmos
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
+import androidx.preference.PreferenceManager
 import com.dreamyprogrammer.mycosmos.databinding.MainActivityBinding
-import com.dreamyprogrammer.mycosmos.ui.Mars.CuriousityFragment
 import com.dreamyprogrammer.mycosmos.ui.PictureOfTheDay.PictureOfTheDayFragment
+import com.dreamyprogrammer.mycosmos.ui.mars.CuriousityFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
+
+private const val SP_KEY_SELECT_THEME = "select_theme"
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: MainActivityBinding
@@ -19,16 +22,15 @@ class MainActivity : AppCompatActivity() {
 
     private val bottomView: BottomNavigationView by lazy { binding.bottomNavigationView }
     private val pictureOfTheDayFragment by lazy { PictureOfTheDayFragment() }
-    private val marsFragment by lazy { CuriousityFragment() }
-    private val fragmentSettings by lazy { SettingsFragment() }
+    private val curiosityFragment by lazy { CuriousityFragment() }
+    private val settingsFragment by lazy { SettingsFragment() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-
         super.onCreate(savedInstanceState)
         binding = MainActivityBinding.inflate(layoutInflater)
-        currentTheme = receivePreference()
-        setMyThem(currentTheme)
+        currentTheme = receiveSharedPreferences()
+        setMyTheme(currentTheme)
         setContentView(binding.root)
 
         if (savedInstanceState == null) {
@@ -37,25 +39,25 @@ class MainActivity : AppCompatActivity() {
                 .commitNow()
         }
         prepareBottomNavigationView()
+
     }
 
-    fun setMyThem(them: Boolean) {
-        if (them) {
+    fun setMyTheme(theme: Boolean) {
+        if (theme) {
             setTheme(marsTheme)
         } else {
             setTheme(basicTheme)
         }
-        if (them != currentTheme) {
+        if (theme != currentTheme) {
             recreate()
         }
 
     }
 
-
-    private fun receivePreference(): Boolean {
+    private fun receiveSharedPreferences(): Boolean {
         val preferenceManager =
-            androidx.preference.PreferenceManager.getDefaultSharedPreferences(application)
-        return preferenceManager.getBoolean("select_theme", false)
+            PreferenceManager.getDefaultSharedPreferences(application)
+        return preferenceManager.getBoolean(SP_KEY_SELECT_THEME, false)
     }
 
     private fun prepareBottomNavigationView() {
@@ -63,12 +65,12 @@ class MainActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.menu_bottom_item_picture -> {
                     showPicture()
-                    if (currentTheme != receivePreference()) {
-                        setMyThem(receivePreference())
+                    if (currentTheme != receiveSharedPreferences()) {
+                        setMyTheme(receiveSharedPreferences())
                     }
                 }
                 R.id.menu_bottom_item_mars -> {
-                    showMars()
+                    showCuriosity()
                 }
                 R.id.app_bar_settings -> {
                     showSettings()
@@ -90,20 +92,19 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 
-    private fun showMars() {
+    private fun showCuriosity() {
         supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
 
         supportFragmentManager.beginTransaction()
-            .replace(R.id.container, marsFragment)
+            .replace(R.id.container, curiosityFragment)
             .commit()
     }
-
 
     private fun showSettings() {
         supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
 
         supportFragmentManager.beginTransaction()
-            .replace(R.id.container, fragmentSettings)
+            .replace(R.id.container, settingsFragment)
             .commit()
     }
 

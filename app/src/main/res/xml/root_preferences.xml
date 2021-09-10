@@ -2,7 +2,7 @@
 
     <PreferenceCategory app:title="@string/theme">
         <SwitchPreferenceCompat
-            app:key="select_theme"
+            app:key="@string/select_theme"
             app:summaryOff="@string/choose_martian_theme"
             app:summaryOn="@string/choose_standard_theme"
             app:title="@string/mars_them" />

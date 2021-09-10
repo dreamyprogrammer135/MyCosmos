@@ -9,4 +9,9 @@
     <string name="choose_standard_theme">Выбрать стандартную тему</string>
     <string name="choose_martian_theme">Выбрать марсианскую тему</string>
     <string name="mars">Марс</string>
+    <string name="hello_blank_fragment">Привет пустой фрагмент</string>
+    <string name="photo_of_the_day_stub">Фотография дня</string>
+    <string name="date">дата</string>
+    <string name="sol_filed">sol</string>
+
 </resources>

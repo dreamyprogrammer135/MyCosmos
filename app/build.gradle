@@ -72,6 +72,9 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
 
+    //Koil image download (аналог Picasso и Glide, написанный на Kotlin)
+    implementation("io.coil-kt:coil:0.11.0")
+
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
