@@ -8,10 +8,9 @@
     <string name="choose_standard_theme">Choose a standard theme</string>
     <string name="choose_martian_theme">Choose a martian theme</string>
     <string name="mars">Mars</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="photo_of_the_day_stub">Photo of the day</string>
     <string name="date">date</string>
     <string name="sol_filed">sol</string>
-    <string name="select_theme" translatable="false">select_theme</string>
+    <string name="select_theme" translatable="false">select_theme1</string>
 </resources>
