@@ -13,5 +13,5 @@
     <string name="photo_of_the_day_stub">Photo of the day</string>
     <string name="date">date</string>
     <string name="sol_filed">sol</string>
-    <string name="select_theme" translatable="false">select_theme1</string>
+    <string name="select_theme" translatable="false">select_theme</string>
 </resources>
