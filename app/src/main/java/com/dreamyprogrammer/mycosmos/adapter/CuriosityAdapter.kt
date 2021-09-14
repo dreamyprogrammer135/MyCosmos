@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import coil.api.load
 import com.dreamyprogrammer.mycosmos.R
+import coil.api.load
 import com.dreamyprogrammer.mycosmos.data.Curiosity
 import com.dreamyprogrammer.mycosmos.data.Photo
 import com.dreamyprogrammer.mycosmos.databinding.ItemCuriosityBinding
@@ -48,7 +48,7 @@ class CuriosityAdapter :
                     datePhotoCuriosity.text = it
                 }
 
-                mars.imgSRC?.let {
+                mars.imgSrc?.let {
                     imagePhotoViewCuriosity.load(it) {
                         itemView.context
                         error(R.drawable.ic_load_error_vector)
