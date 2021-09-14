@@ -13,5 +13,6 @@
     <string name="photo_of_the_day_stub">Фотография дня</string>
     <string name="date">дата</string>
     <string name="sol_filed">sol</string>
+    <string name="enter_a_search_query">введите запрос для поиска</string>
 
 </resources>

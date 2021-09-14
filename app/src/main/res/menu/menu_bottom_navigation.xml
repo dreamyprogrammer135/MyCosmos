@@ -9,7 +9,11 @@
         android:icon="@drawable/ic_mars"
         android:title="@string/mars" />
     <item
-        android:id="@+id/app_bar_settings"
+        android:id="@+id/menu_bottom_item_search"
+        android:icon="@drawable/ic_search_24"
+        android:title="@string/search_menu_navigation" />
+    <item
+        android:id="@+id/menu_bottom_item_settings"
         android:icon="@drawable/ic_settings_24"
         android:title="@string/settings" />
 </menu>

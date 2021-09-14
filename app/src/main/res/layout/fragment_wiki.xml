@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/fragment_wiki_layout_scene">
+
+    <ImageView
+        android:id="@+id/image_view_wiki"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/wiki"
+        android:text="@string/hello_blank_fragment" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_wiki"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:endIconDrawable="@drawable/ic_wikipedia"
+        app:endIconMode="custom">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_edit_text_wiki"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_a_search_query">
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

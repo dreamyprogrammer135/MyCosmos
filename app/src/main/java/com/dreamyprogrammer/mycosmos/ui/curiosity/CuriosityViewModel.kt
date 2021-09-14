@@ -1,10 +1,9 @@
-package com.dreamyprogrammer.mycosmos.ui.mars
+package com.dreamyprogrammer.mycosmos.ui.curiosity
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.dreamyprogrammer.mycosmos.RetrofitHolder
-import com.dreamyprogrammer.mycosmos.adapter.CuriosityAdapter
 import com.dreamyprogrammer.mycosmos.data.Curiosity
 import retrofit2.Call
 import retrofit2.Callback

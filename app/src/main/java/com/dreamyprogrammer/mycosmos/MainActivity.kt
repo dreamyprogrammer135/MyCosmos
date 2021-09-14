@@ -2,12 +2,15 @@ package com.dreamyprogrammer.mycosmos
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.preference.PreferenceManager
 import com.dreamyprogrammer.mycosmos.databinding.MainActivityBinding
 import com.dreamyprogrammer.mycosmos.ui.PictureOfTheDay.PictureOfTheDayFragment
-import com.dreamyprogrammer.mycosmos.ui.mars.CuriousityFragment
+import com.dreamyprogrammer.mycosmos.ui.curiosity.CuriousityFragment
+import com.dreamyprogrammer.mycosmos.ui.wiki.WikiFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlin.reflect.KClass
 
 
 private const val SP_KEY_SELECT_THEME = "select_theme"
@@ -24,6 +27,7 @@ class MainActivity : AppCompatActivity() {
     private val pictureOfTheDayFragment by lazy { PictureOfTheDayFragment() }
     private val curiosityFragment by lazy { CuriousityFragment() }
     private val settingsFragment by lazy { SettingsFragment() }
+    private val fragmentWiki by lazy { WikiFragment() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -72,7 +76,10 @@ class MainActivity : AppCompatActivity() {
                 R.id.menu_bottom_item_mars -> {
                     showCuriosity()
                 }
-                R.id.app_bar_settings -> {
+                R.id.menu_bottom_item_search -> {
+                    showWiki()
+                }
+                R.id.menu_bottom_item_settings -> {
                     showSettings()
                 }
                 else -> {
@@ -81,6 +88,15 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+    }
+
+    private fun showWiki() {
+        supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.container, fragmentWiki)
+            .commit()
+
     }
 
 

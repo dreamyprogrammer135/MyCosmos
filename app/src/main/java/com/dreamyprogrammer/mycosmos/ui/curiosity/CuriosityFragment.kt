@@ -1,4 +1,4 @@
-package com.dreamyprogrammer.mycosmos.ui.mars
+package com.dreamyprogrammer.mycosmos.ui.curiosity
 
 import android.os.Bundle
 import android.view.LayoutInflater
