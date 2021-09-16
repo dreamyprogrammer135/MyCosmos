@@ -1,21 +1,22 @@
 package com.dreamyprogrammer.mycosmos
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.preference.PreferenceManager
+import com.dreamyprogrammer.mycosmos.data.Photo
 import com.dreamyprogrammer.mycosmos.databinding.MainActivityBinding
 import com.dreamyprogrammer.mycosmos.ui.PictureOfTheDay.PictureOfTheDayFragment
 import com.dreamyprogrammer.mycosmos.ui.curiosity.CuriousityFragment
+import com.dreamyprogrammer.mycosmos.ui.curiosity.ZoomImageFragment
 import com.dreamyprogrammer.mycosmos.ui.wiki.WikiFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import kotlin.reflect.KClass
 
 
 private const val SP_KEY_SELECT_THEME = "select_theme"
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), CuriousityFragment.Contract {
     private lateinit var binding: MainActivityBinding
     //TODO С этим надо что то сделать (шарепреференс или enum) надо подумать
 
@@ -45,6 +46,7 @@ class MainActivity : AppCompatActivity() {
         prepareBottomNavigationView()
 
     }
+
 
     fun setMyTheme(theme: Boolean) {
         if (theme) {
@@ -121,6 +123,15 @@ class MainActivity : AppCompatActivity() {
 
         supportFragmentManager.beginTransaction()
             .replace(R.id.container, settingsFragment)
+            .commit()
+    }
+
+    override fun onItemClickListener(curiosity: Photo, view: View) {
+        supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.container, ZoomImageFragment.newInstance(curiosity))
+            .addToBackStack(null)
             .commit()
     }
 
